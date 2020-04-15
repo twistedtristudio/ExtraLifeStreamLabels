@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/ExtraLifeStreamLabels/v16/.suo
+/.vs/slnx.sqlite
+/ExtraLifeStreamLabelsCore/.vs/ExtraLifeStreamLabelsCore/v16/.suo
+/.vs/VSWorkspaceState.json
+/.vs/ProjectSettings.json
+/WJS.ExtraLifeStreamLabelsCore/.vs/WJS.ExtraLifeStreamLabelsCore/v16/.suo
