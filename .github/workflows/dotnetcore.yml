@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 3.1.101
     - name: Install dependencies
-      run: dotnet restore ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln --verbosity detailed
+      run: dotnet restore ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln --no-restore --verbosity normal
