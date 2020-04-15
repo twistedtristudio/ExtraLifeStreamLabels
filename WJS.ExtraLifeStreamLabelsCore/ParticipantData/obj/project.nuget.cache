@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "IEcNsksf0Mg8hSSTALkSNxbw6u2hGHXK7QXSBUm1YzLqFjWVBh2IbIu4O23XnRofpUWrw80e5QqDjuIoyBaSBg==",
+  "success": true,
+  "projectFilePath": "C:\\GitHub\\WireJunkySolutions\\Repos\\ExtraLifeStreamLabels\\WJS.ExtraLifeStreamLabelsCore\\ParticipantData\\ParticipantData.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Matt\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
