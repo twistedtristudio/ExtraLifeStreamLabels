@@ -4,3 +4,5 @@
 Extra Life Stream Labels is a service that utilizes the Donor Drive public API to fetch Extra Life participant, team, and donation information.
 
 Add your Participant Id, Team Id, and desired location for stream labels to be saved to the appsettings.json file.
+
+![.NET Core](https://github.com/WireJunky-Solutions/ExtraLifeStreamLabels/workflows/.NET%20Core/badge.svg?branch=master)
