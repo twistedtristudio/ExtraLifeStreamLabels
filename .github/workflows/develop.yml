@@ -8,9 +8,13 @@ on:
 
 jobs:
     BuildUbuntuJob:
-      name: Build Ubuntu
+      name: Build on ${{matrix.container}}
       build:
-        runs-on: ubuntu-latest
+        runs-on: ${{ matrix.os }}
+        stratety:
+            matrix:
+                os: [macos-latest, windows-latest, ubuntu-latest]
+                node:[4, 6, 8, 10]
         steps:
         - uses: actions/checkout@v2
         - name: Setup .NET Core
@@ -23,37 +27,3 @@ jobs:
           run: dotnet build ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln --configuration Release --no-restore
         - name: Test
           run: dotnet test ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln --no-restore --verbosity normal
-
-    BuildLatestWindowsJob:
-        name: Build Latest Windows
-            build:
-                runs-on: windows-latest
-                steps:
-                - uses: actions/checkout@v2
-                - name: Setup .NET Core
-                  uses: actions/setup-dotnet@v1
-                  with:
-                    dotnet-version: 3.1.101
-                - name: Install dependencies
-                  run: dotnet restore ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln
-                - name: Build
-                  run: dotnet build ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln --configuration Release --no-restore
-                - name: Test
-                  run: dotnet test ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln --no-restore --verbosity normal
-
-    BuildLatestMacOsJob:
-        name: Build Latest MacOS
-            build:
-                runs-on: macos-latest
-                steps:
-                - uses: actions/checkout@v2
-                - name: Setup .NET Core
-                  uses: actions/setup-dotnet@v1
-                  with:
-                    dotnet-version: 3.1.101
-                - name: Install dependencies
-                  run: dotnet restore ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln
-                - name: Build
-                  run: dotnet build ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln --configuration Release --no-restore
-                - name: Test
-                  run: dotnet test ././WJS.ExtraLifeStreamLabelsCore/WJS.ExtraLifeStreamLabelsCore.sln --no-restore --verbosity normal
