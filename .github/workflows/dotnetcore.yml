@@ -17,8 +17,7 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
-    - name: Install dependencies
-      run: dotnet restore ./WJS.ExtraLifeStreamLablesCore
+    - name: Install dependencies --verbosity detailed
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
