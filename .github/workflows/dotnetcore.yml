@@ -17,7 +17,8 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
-    - name: Install dependencies --verbosity detailed
+    - name: Install dependencies
+      run: dotnet restore --verbosity detailed
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
