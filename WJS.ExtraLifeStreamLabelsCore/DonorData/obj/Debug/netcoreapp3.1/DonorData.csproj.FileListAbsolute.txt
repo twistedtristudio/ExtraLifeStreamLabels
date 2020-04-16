@@ -1,8 +1,0 @@
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\DonorData\bin\Debug\netcoreapp3.1\WJS.DonorData.deps.json
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\DonorData\bin\Debug\netcoreapp3.1\WJS.DonorData.dll
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\DonorData\obj\Debug\netcoreapp3.1\DonorData.AssemblyInfoInputs.cache
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\DonorData\obj\Debug\netcoreapp3.1\DonorData.AssemblyInfo.cs
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\DonorData\bin\Debug\netcoreapp3.1\WJS.DonorData.pdb
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\DonorData\obj\Debug\netcoreapp3.1\DonorData.csproj.CoreCompileInputs.cache
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\DonorData\obj\Debug\netcoreapp3.1\WJS.DonorData.dll
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\DonorData\obj\Debug\netcoreapp3.1\WJS.DonorData.pdb
