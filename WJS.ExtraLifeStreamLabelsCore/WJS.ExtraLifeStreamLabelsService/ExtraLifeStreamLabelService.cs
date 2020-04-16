@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -26,10 +27,21 @@ namespace WJS.ExtraLifeStreamLabelsService
         private static ParticipantDataModel _previousParticipantData;
         private static IConfigurationRoot _config;
 
+        private static string GetAssemblyDirectory
+        {
+            get
+            {
+                string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+                UriBuilder uri = new UriBuilder(codeBase);
+                string path = Uri.UnescapeDataString(uri.Path);
+                return Path.GetDirectoryName(path);
+            }
+        }
+
         public ExtraLifeStreamLabelService(ILogger<ExtraLifeStreamLabelService> logger)
         {
             _logger = logger;
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
+            var builder = new ConfigurationBuilder().SetBasePath(GetAssemblyDirectory).AddJsonFile("appsettings.json");
             _config = builder.Build();
             _participantEndpoint =
                 $"participants/{_config.GetSection("ExtraLifeData").Get<ExtraLifeData>().ParticipantId}";
@@ -37,7 +49,6 @@ namespace WJS.ExtraLifeStreamLabelsService
             _donationsEndpoint = $"{_participantEndpoint}/donations";
             _teamEndpoint = $"teams/{_config.GetSection("ExtraLifeData").Get<ExtraLifeData>().TeamId}";
             _previousParticipantData = new ParticipantDataModel();
-
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)

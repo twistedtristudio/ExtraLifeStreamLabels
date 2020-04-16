@@ -16,3 +16,5 @@ obj/
 
 *.sqlite-journal
 *.v2
+*.pubxml
+*.user
