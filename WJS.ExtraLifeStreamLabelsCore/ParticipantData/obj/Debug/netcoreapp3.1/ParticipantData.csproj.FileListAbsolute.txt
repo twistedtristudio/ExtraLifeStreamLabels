@@ -1,8 +1,0 @@
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\ParticipantData\bin\Debug\netcoreapp3.1\WJS.ParticipantData.deps.json
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\ParticipantData\bin\Debug\netcoreapp3.1\WJS.ParticipantData.dll
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\ParticipantData\obj\Debug\netcoreapp3.1\ParticipantData.AssemblyInfoInputs.cache
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\ParticipantData\obj\Debug\netcoreapp3.1\ParticipantData.AssemblyInfo.cs
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\ParticipantData\bin\Debug\netcoreapp3.1\WJS.ParticipantData.pdb
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\ParticipantData\obj\Debug\netcoreapp3.1\ParticipantData.csproj.CoreCompileInputs.cache
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\ParticipantData\obj\Debug\netcoreapp3.1\WJS.ParticipantData.dll
-C:\GitHub\WireJunkySolutions\Repos\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\ParticipantData\obj\Debug\netcoreapp3.1\WJS.ParticipantData.pdb
