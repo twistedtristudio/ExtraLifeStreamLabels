@@ -1,30 +1,240 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- The name of the product -->
+<?define Name = "ExtraLifeStreamLabels_Core" ?>
+<!-- The manufacturer, for setup package publisher and folder info -->
+<?define Manufacturer = "WireJunky Solutions" ?>
+<!-- The version number of this setup package-->
+<?define Version = "2.0.0" ?>
+<!-- UpgradeCode must be unique and not changed once the first version of the program is installed. -->
+<?define UpgradeCode = "{953ec0b7-d0d8-4364-9bba-c8d9fa443a76}" ?>
+<?define SourceDir = "C:\GitHub\WireJunkySolutions\Repos\WireJunky-Solutions\ExtraLifeStreamLabels\WJS.ExtraLifeStreamLabelsCore\WJS.ExtraLifeStreamLabelsService\bin\Debug\netcoreapp3.1"?>
+
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<Product Id="*" Name="ExtraLifeStreamLablesInstaller" Language="1033" Version="1.0.0.0" Manufacturer="" UpgradeCode="5f872c7f-a44a-4f8d-8a2e-b5bcf43e1d2b">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
-
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
-
-		<Feature Id="ProductFeature" Title="ExtraLifeStreamLablesInstaller" Level="1">
-			<ComponentGroupRef Id="ProductComponents" />
-		</Feature>
-	</Product>
-
-	<Fragment>
-		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="ExtraLifeStreamLablesInstaller" />
-			</Directory>
-		</Directory>
-	</Fragment>
-
-	<Fragment>
-		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
-			<!-- <Component Id="ProductComponent"> -->
-      <File Source="$(var.WJS.ExtraLifeStreamLabelsCore.TargetPath)" />
-			<!-- </Component> -->
-		</ComponentGroup>
-	</Fragment>
+  <Product Id="*" Name="$(var.Name)" Manufacturer="$(var.Manufacturer)" UpgradeCode="$(var.UpgradeCode)" Version="$(var.Version)" Language="1033">
+    <!-- Create a folder inside Talk Sharp called Test Service -->
+    <Package InstallerVersion="300" Compressed="yes"/>
+    <!-- Create a folder inside Talk Sharp called Test Service -->
+    <Media Id="1" Cabinet="WJS.ExtraLifeStreamLabelsService.cab" EmbedCab="yes" />
+    <!-- Allow upgrades and prevent downgrades -->
+    <MajorUpgrade DowngradeErrorMessage="A later version of [ProductName] is already installed. Setup will now exit." />
+    <!-- Define the directory structure -->
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <!-- Create a folder inside program files called Talk Sharp -->
+        <Directory Id="ROOTDIRECTORY" Name="$(var.Manufacturer)">
+          <!-- Create a folder inside Talk Sharp called Test Service -->
+          <Directory Id="INSTALLFOLDER" Name="$(var.Name)" />
+        </Directory>
+      </Directory>
+    </Directory>
+    <!-- The files inside this DirectoryRef are linked to the Test Service directory via INSTALLFOLDER -->
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="cmp173A9EBD1B3A989404E059BB748159D1" Guid="{269D8371-A2ED-4E5C-9558-DBC8AE79EF52}">
+        <File Id="fil07388C9462DE4059819728354C4D9F71" KeyPath="yes" Source="$(var.SourceDir)\appsettings.Development.json" />
+      </Component>
+      <Component Id="cmp1764E15E90E559027A791FF40441F79D" Guid="{AFF1D54B-9B1F-4B05-A065-C5D1E6580F97}">
+        <File Id="fil08AAC65A38FAB9D7A407039981937D5F" KeyPath="yes" Source="$(var.SourceDir)\appsettings.json" />
+      </Component>
+      <Component Id="cmp47211C1AD524A6BAE63D25C08C6DE16C" Guid="{791959DA-E573-490A-BC50-4AFF853AE47D}">
+        <File Id="fil4CEFD61822E85ECB7CA8D66D384A9ACF" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Configuration.Abstractions.dll" />
+      </Component>
+      <Component Id="cmpE5C7F11FC93736F015ADCA5C90380622" Guid="{90C4582A-43CD-4552-8327-5C843BFF6A4B}">
+        <File Id="fil5E4755302602615F3D25B20A914089DD" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Configuration.Binder.dll" />
+      </Component>
+      <Component Id="cmpA47276385EDB525039EAD9165837DB73" Guid="{1C6633D8-1F0A-4DC2-AA02-C51DEE37D8E6}">
+        <File Id="fil9C143BBC9D67FB7714A196B159CE81E9" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Configuration.CommandLine.dll" />
+      </Component>
+      <Component Id="cmpE38B274C96E5BC142322320B754120F5" Guid="{7207047C-D00A-49DF-BFEB-54AA77B8D7B5}">
+        <File Id="filB85EF476A9A2E1D4B8E5D57C1EC69162" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Configuration.dll" />
+      </Component>
+      <Component Id="cmpF0219267084373EDA85D73BA0E928520" Guid="{B95F594F-3486-40F4-8316-F39178DB757E}">
+        <File Id="fil4A36C0CEBD7D480253052A45D3304CC6" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" />
+      </Component>
+      <Component Id="cmp8522FCABD0478CC9A52A90C4AEAD7F84" Guid="{39DCD6F9-C81B-4E7F-8BAB-BD36F9AAB027}">
+        <File Id="filBCD90CFF6E581B79A28B741F6E165691" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Configuration.FileExtensions.dll" />
+      </Component>
+      <Component Id="cmpC9BE9E903EA773AB48F3E30A001AB464" Guid="{21CC8B5A-A8E5-4A64-BE81-A8F486FCC3F4}">
+        <File Id="fil86D29062396C09D002149BA03D088B2A" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Configuration.Json.dll" />
+      </Component>
+      <Component Id="cmp746913BDC1EAC07708CF67CAC3364939" Guid="{1B2A7437-EF70-4286-86C7-F3543EF8C810}">
+        <File Id="filBB440DD4511F45A92EAF9F5DAFA3C7DA" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Configuration.UserSecrets.dll" />
+      </Component>
+      <Component Id="cmpF54245E651BEDF5415F497667215C863" Guid="{6FCB0214-D898-46B3-AD69-BD278D8C90B0}">
+        <File Id="fil953D7066A48701B0A8ADD2D73FC5390D" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+      </Component>
+      <Component Id="cmp864FA2EB9CC24F178881DBEDA80CE022" Guid="{B3745ABC-7916-4B44-BCF8-5A7E132866B4}">
+        <File Id="fil9375C2E535559335806A64F134EB2134" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.DependencyInjection.dll" />
+      </Component>
+      <Component Id="cmp62E27EA4BAAC8C5A9F0FD57F73D8FB8B" Guid="{B2CEEED8-4BCF-465D-AAB2-D83D03B794CD}">
+        <File Id="filC565AE0B822EB469D166AA8992372C77" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+      </Component>
+      <Component Id="cmp418BA8A1BC1CB7AE76E261BD8B30A188" Guid="{0EAB8128-3D7D-46CB-B4DD-59E395F1E0CC}">
+        <File Id="filE286185D3DECCC1767F2EFA6B3ABDB2D" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.FileProviders.Physical.dll" />
+      </Component>
+      <Component Id="cmp2A7927075B155E7DC6926339389478C5" Guid="{36936F4A-73B0-4C74-AA30-47377228FFE4}">
+        <File Id="filA4D7350C03AA6CFC28D3BFA0BEC454AC" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.FileSystemGlobbing.dll" />
+      </Component>
+      <Component Id="cmp01D8E5FBDD6753116E5C3758FD43772B" Guid="{158B8219-83BE-44AB-8574-2482063746AD}">
+        <File Id="filB2D632EBDE447CAD9E5103E41F096C91" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Hosting.Abstractions.dll" />
+      </Component>
+      <Component Id="cmpDEED71B9F762752E70D9B93805AB3C97" Guid="{2EEE9CF0-320D-4849-8183-0C78B68A4C58}">
+        <File Id="fil83C42EA7E386FBC094FC3C74C41242EC" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Hosting.dll" />
+      </Component>
+      <Component Id="cmpAEECFB7C482D408FA049879218E80EE9" Guid="{2918991F-D2C7-4B2A-83DD-56BB96F3BF6A}">
+        <File Id="fil2F808679A8F0FFC52B1FA529E0B96704" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Hosting.WindowsServices.dll" />
+      </Component>
+      <Component Id="cmp718416C335B2FEFBEC6325086225FDF2" Guid="{12CC0941-449A-48AA-90F1-263D1B781C7E}">
+        <File Id="fil955CC85A941A39CBB625BE267ED53FAC" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Logging.Abstractions.dll" />
+      </Component>
+      <Component Id="cmp0F9F9728FADE74CDEAD822EF15577FBB" Guid="{649BC231-B2FA-4011-B9A8-D62FC944876F}">
+        <File Id="fil7E51F3880090C40C478A8996E62B6244" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Logging.Configuration.dll" />
+      </Component>
+      <Component Id="cmp3C368656BE9ADC1FCF8E0A2C0C50CEC1" Guid="{C587EDC1-1C91-4D5C-97C4-A8043DD347B2}">
+        <File Id="fil895075775F2493911599C20AFEFEA1B4" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Logging.Console.dll" />
+      </Component>
+      <Component Id="cmp9928897B2DD4EB7C174D733C49FF78A4" Guid="{4D5C150C-3530-460F-B997-0650F4422FC6}">
+        <File Id="filFECC2D9AE149E0D5268E2995771C73AB" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Logging.Debug.dll" />
+      </Component>
+      <Component Id="cmp1181D609A2CDD931D46364B19B9A8981" Guid="{0A3FD8AB-8F82-4714-AA22-A3133C2B3B17}">
+        <File Id="fil7CB4ABB8B1AB97599B19D10320A8CCA8" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Logging.dll" />
+      </Component>
+      <Component Id="cmp483A461B56BAC0AD9D0F83F5FC3E70B9" Guid="{BE746DD4-8F8E-4478-9CDA-AD44B6E1B51D}">
+        <File Id="fil48D64737A0382FCEB065EF991E43A805" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Logging.EventLog.dll" />
+      </Component>
+      <Component Id="cmpB706AA2C08B56D620E051EC4B16B9F68" Guid="{A35A11C9-9EC5-4824-8A8E-CF088B43CAF9}">
+        <File Id="filF27D3F44FAA1F9C281B959927F1298C5" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Logging.EventSource.dll" />
+      </Component>
+      <Component Id="cmpA9497AF075BB787D99071F3FC951E1E7" Guid="{886E60D4-8687-4570-82DF-8BBBF47A9135}">
+        <File Id="filEA9A03206A7B3BD8B3519576F7CADC45" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+      </Component>
+      <Component Id="cmp78443F0C65CD7E50F05F33E84F743C2D" Guid="{4A5E4570-66AC-4507-A59A-BC11C152D587}">
+        <File Id="fil6EF8E3DF202A4B0515C7687460F54574" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Options.dll" />
+      </Component>
+      <Component Id="cmp2E664E0AF41B37F76CFF448B12B7B20D" Guid="{15414B59-5BBC-4A69-A3B7-2B242C897A0F}">
+        <File Id="filB34CFE0E10B15E05426D6383E4BC4659" KeyPath="yes" Source="$(var.SourceDir)\Microsoft.Extensions.Primitives.dll" />
+      </Component>
+      <Component Id="cmpF02FF9617CA9F083650EEC4E9E28C2B9" Guid="{823F60E4-0FED-4B84-86EE-4113A486DED7}">
+        <File Id="fil12988A8BB44D7E35EE1871A656C50DD7" KeyPath="yes" Source="$(var.SourceDir)\Newtonsoft.Json.dll" />
+      </Component>
+      <Component Id="cmpE8F5EAA9F028119C1754785A1D68739D" Guid="{10F946B6-A0B5-4252-AC42-F67743EDA006}">
+        <File Id="fil891A4874F8D7788247ADB41BBA1AAD55" KeyPath="yes" Source="$(var.SourceDir)\System.Diagnostics.EventLog.dll" />
+      </Component>
+      <Component Id="cmpF36EE0116A148867BD11EA5272BE92EE" Guid="{D6EABDC5-E0C6-4CF2-A507-5636315528CA}">
+        <File Id="fil6940D7AFCEC347F8533CDC25F2A3C779" KeyPath="yes" Source="$(var.SourceDir)\System.ServiceProcess.ServiceController.dll" />
+      </Component>
+      <Component Id="cmp0FAC84BBCEF9D55242D62B02443454C4" Guid="{440A7BAB-17E9-4113-BE86-DF84D6764E5C}">
+        <File Id="fil9FBC1FD477CD52285C2C6F712D219FDE" KeyPath="yes" Source="$(var.SourceDir)\WJS.DonorData.dll" />
+      </Component>
+      <Component Id="cmpDA20BCFBC50B9275A7444EAFFE144E32" Guid="{945075A8-46B7-4D53-B562-69F823A19F2E}">
+        <File Id="filB9E5519EEE71A0193180B55D1135E720" KeyPath="yes" Source="$(var.SourceDir)\WJS.DonorData.pdb" />
+      </Component>
+      <Component Id="cmpB2703A8C13A95DE80FF99E77220F6986" Guid="{BF56B571-B669-42C8-9E5A-48C50CC248A8}">
+        <File Id="fil13C36C0FED9109152A45FFBD07C1C219" KeyPath="yes" Source="$(var.SourceDir)\WJS.ExtraLifeStreamLabelsService.deps.json" />
+      </Component>
+      <Component Id="cmp453AF7B01EF8C8DB79555854F4CBA8A8" Guid="{4860CF4A-17EE-41FA-9427-C5005B51A0BF}">
+        <File Id="fil196AE0119E7E014659DBF1EDCF6A422E" KeyPath="yes" Source="$(var.SourceDir)\WJS.ExtraLifeStreamLabelsService.dll" />
+      </Component>
+      <Component Id="cmp6B8A4156C9EB2FBD25AB53FE98EACCEE" Guid="{64954F1F-9200-400D-AF2C-21D068702A60}">
+        <File Id="fil250E417B7A6B06B9997171010876CB05" KeyPath="yes" Source="$(var.SourceDir)\WJS.ExtraLifeStreamLabelsService.exe" />
+        <!-- Remove all files from the INSTALLFOLDER on uninstall -->
+        <RemoveFile Id="ALLFILES" Name="*.*" On="both" />
+        <!-- Tell WiX to install the Service -->
+        <ServiceInstall Id="ServiceInstaller"
+                        Name="ExtraLifeStreamLabels_Core"
+                        Type="ownProcess"
+                        Vital="yes"
+                        DisplayName="$(var.Name)"
+                        Description="Monitor Extra Life Data"
+                        Start="auto"
+                        Account="LocalSystem"
+                        ErrorControl="normal"
+                        Arguments=" /start ExtraLifeStreamLabels_Core"
+                        Interactive="no" />
+        <ServiceControl Id="StartService"
+                        Name="ExtraLifeStreamLabels_Core"
+                        Stop="both"
+                        Start="install"
+                        Remove="uninstall"
+                        Wait="yes" />
+      </Component>
+      <Component Id="cmp61D72E4B237CA082F32E166B54521B71" Guid="{DFD1E8E1-53D6-49BA-BC73-441C59D574D9}">
+        <File Id="filEFE6702F8B47B637A6705A2C667CBC8A" KeyPath="yes" Source="$(var.SourceDir)\WJS.ExtraLifeStreamLabelsService.pdb" />
+      </Component>
+      <Component Id="cmp1A30A9E1E4830AC361EFE77D888180A0" Guid="{BA592390-76FF-480F-99D8-893ED4904E51}">
+        <File Id="fil7FBE6D9C998C41058E07C87F5B57AEE7" KeyPath="yes" Source="$(var.SourceDir)\WJS.ExtraLifeStreamLabelsService.runtimeconfig.dev.json" />
+      </Component>
+      <Component Id="cmpA86FF7200CCE31181E390E989DDA6373" Guid="{4BA9DB22-731D-461B-A2E2-55BC473BE129}">
+        <File Id="fil4D040C0DCA63AAAEC2D17C27091E7BE7" KeyPath="yes" Source="$(var.SourceDir)\WJS.ExtraLifeStreamLabelsService.runtimeconfig.json" />
+      </Component>
+      <Component Id="cmp4BAB4F38A7D86BC92A9AC5BCB7452785" Guid="{97C24DE8-91EB-4229-982D-7713557CDB4B}">
+        <File Id="fil3C4D96881D54A94703FEF9117968F046" KeyPath="yes" Source="$(var.SourceDir)\WJS.ParticipantData.dll" />
+      </Component>
+      <Component Id="cmp6AF875043D726F9F5136623128A1C580" Guid="{602D8E74-A76F-4DF8-967D-D466C46BF031}">
+        <File Id="filEA1E0E72192764E85370749950C5ED74" KeyPath="yes" Source="$(var.SourceDir)\WJS.ParticipantData.pdb" />
+      </Component>
+      <Directory Id="dir3D900411D23BEF5A4C9187F4F45C4EBB" Name="runtimes">
+        <Directory Id="dir19E7055F91793BD5C1FEF218F80DE4A7" Name="win">
+          <Directory Id="dir06615C0AEEEA1298A1B87848D4D68269" Name="lib">
+            <Directory Id="dir73AE14300741243AD450A4850B0266C3" Name="netcoreapp2.0">
+              <Component Id="cmpB975CFCD4549632B89A3593BDE9CB636" Guid="{A0A5AB5A-872A-45DC-B76F-783F332EF100}">
+                <File Id="filEC43F2BBC4AC828BEF0E53838999DFFF" KeyPath="yes" Source="$(var.SourceDir)\runtimes\win\lib\netcoreapp2.0\System.Diagnostics.EventLog.dll" />
+              </Component>
+            </Directory>
+            <Directory Id="dirE7B27FBF1DFC9D2D641204A424AB3299" Name="netstandard2.0">
+              <Component Id="cmp488774F28F455656CF7957A16F524098" Guid="{CFD4E09C-2F65-458C-BE74-257B8DC68999}">
+                <File Id="fil7EF0BEB46329E6CE690D8C3E01E5B2B5" KeyPath="yes" Source="$(var.SourceDir)\runtimes\win\lib\netstandard2.0\System.ServiceProcess.ServiceController.dll" />
+              </Component>
+            </Directory>
+          </Directory>
+        </Directory>
+      </Directory>
+      <!-- Create a single component which is the TestService.exe file -->
+    </DirectoryRef>
+    <!-- Tell WiX to install the files -->
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+      <ComponentRef Id="cmp173A9EBD1B3A989404E059BB748159D1" />
+      <ComponentRef Id="cmp1764E15E90E559027A791FF40441F79D" />
+      <ComponentRef Id="cmp47211C1AD524A6BAE63D25C08C6DE16C" />
+      <ComponentRef Id="cmpE5C7F11FC93736F015ADCA5C90380622" />
+      <ComponentRef Id="cmpA47276385EDB525039EAD9165837DB73" />
+      <ComponentRef Id="cmpE38B274C96E5BC142322320B754120F5" />
+      <ComponentRef Id="cmpF0219267084373EDA85D73BA0E928520" />
+      <ComponentRef Id="cmp8522FCABD0478CC9A52A90C4AEAD7F84" />
+      <ComponentRef Id="cmpC9BE9E903EA773AB48F3E30A001AB464" />
+      <ComponentRef Id="cmp746913BDC1EAC07708CF67CAC3364939" />
+      <ComponentRef Id="cmpF54245E651BEDF5415F497667215C863" />
+      <ComponentRef Id="cmp864FA2EB9CC24F178881DBEDA80CE022" />
+      <ComponentRef Id="cmp62E27EA4BAAC8C5A9F0FD57F73D8FB8B" />
+      <ComponentRef Id="cmp418BA8A1BC1CB7AE76E261BD8B30A188" />
+      <ComponentRef Id="cmp2A7927075B155E7DC6926339389478C5" />
+      <ComponentRef Id="cmp01D8E5FBDD6753116E5C3758FD43772B" />
+      <ComponentRef Id="cmpDEED71B9F762752E70D9B93805AB3C97" />
+      <ComponentRef Id="cmpAEECFB7C482D408FA049879218E80EE9" />
+      <ComponentRef Id="cmp718416C335B2FEFBEC6325086225FDF2" />
+      <ComponentRef Id="cmp0F9F9728FADE74CDEAD822EF15577FBB" />
+      <ComponentRef Id="cmp3C368656BE9ADC1FCF8E0A2C0C50CEC1" />
+      <ComponentRef Id="cmp9928897B2DD4EB7C174D733C49FF78A4" />
+      <ComponentRef Id="cmp1181D609A2CDD931D46364B19B9A8981" />
+      <ComponentRef Id="cmp483A461B56BAC0AD9D0F83F5FC3E70B9" />
+      <ComponentRef Id="cmpB706AA2C08B56D620E051EC4B16B9F68" />
+      <ComponentRef Id="cmpA9497AF075BB787D99071F3FC951E1E7" />
+      <ComponentRef Id="cmp78443F0C65CD7E50F05F33E84F743C2D" />
+      <ComponentRef Id="cmp2E664E0AF41B37F76CFF448B12B7B20D" />
+      <ComponentRef Id="cmpF02FF9617CA9F083650EEC4E9E28C2B9" />
+      <ComponentRef Id="cmpE8F5EAA9F028119C1754785A1D68739D" />
+      <ComponentRef Id="cmpF36EE0116A148867BD11EA5272BE92EE" />
+      <ComponentRef Id="cmp0FAC84BBCEF9D55242D62B02443454C4" />
+      <ComponentRef Id="cmpDA20BCFBC50B9275A7444EAFFE144E32" />
+      <ComponentRef Id="cmpB2703A8C13A95DE80FF99E77220F6986" />
+      <ComponentRef Id="cmp453AF7B01EF8C8DB79555854F4CBA8A8" />
+      <ComponentRef Id="cmp6B8A4156C9EB2FBD25AB53FE98EACCEE" />
+      <ComponentRef Id="cmp61D72E4B237CA082F32E166B54521B71" />
+      <ComponentRef Id="cmp1A30A9E1E4830AC361EFE77D888180A0" />
+      <ComponentRef Id="cmpA86FF7200CCE31181E390E989DDA6373" />
+      <ComponentRef Id="cmp4BAB4F38A7D86BC92A9AC5BCB7452785" />
+      <ComponentRef Id="cmp6AF875043D726F9F5136623128A1C580" />
+      <ComponentRef Id="cmpB975CFCD4549632B89A3593BDE9CB636" />
+      <ComponentRef Id="cmp488774F28F455656CF7957A16F524098" />
+    </Feature>
+  </Product>
 </Wix>
