@@ -3,30 +3,52 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WJS.ExtraLifeStreamLabelsService", "WJS.ExtraLifeStreamLabelsService\WJS.ExtraLifeStreamLabelsService.csproj", "{74126B5F-B9FB-4937-8668-431493A20DCB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WJS.ExtraLifeStreamLabelsService", "WJS.ExtraLifeStreamLabelsService\WJS.ExtraLifeStreamLabelsService.csproj", "{74126B5F-B9FB-4937-8668-431493A20DCB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DonorData", "DonorData\DonorData.csproj", "{10872569-66E0-48A9-9CCD-51262EAD939F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DonorData", "DonorData\DonorData.csproj", "{10872569-66E0-48A9-9CCD-51262EAD939F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParticipantData", "ParticipantData\ParticipantData.csproj", "{E269CB8F-4500-4359-BC93-47B827E72BA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ParticipantData", "ParticipantData\ParticipantData.csproj", "{E269CB8F-4500-4359-BC93-47B827E72BA1}"
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "ExtraLifeStreamLablesInstaller", "ExtraLifeStreamLablesInstaller\ExtraLifeStreamLablesInstaller.wixproj", "{D8D3758C-638B-4D98-9F86-7CD6661DC88C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{74126B5F-B9FB-4937-8668-431493A20DCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{74126B5F-B9FB-4937-8668-431493A20DCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74126B5F-B9FB-4937-8668-431493A20DCB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{74126B5F-B9FB-4937-8668-431493A20DCB}.Debug|x86.Build.0 = Debug|Any CPU
 		{74126B5F-B9FB-4937-8668-431493A20DCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74126B5F-B9FB-4937-8668-431493A20DCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74126B5F-B9FB-4937-8668-431493A20DCB}.Release|x86.ActiveCfg = Release|Any CPU
+		{74126B5F-B9FB-4937-8668-431493A20DCB}.Release|x86.Build.0 = Release|Any CPU
 		{10872569-66E0-48A9-9CCD-51262EAD939F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{10872569-66E0-48A9-9CCD-51262EAD939F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10872569-66E0-48A9-9CCD-51262EAD939F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{10872569-66E0-48A9-9CCD-51262EAD939F}.Debug|x86.Build.0 = Debug|Any CPU
 		{10872569-66E0-48A9-9CCD-51262EAD939F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10872569-66E0-48A9-9CCD-51262EAD939F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10872569-66E0-48A9-9CCD-51262EAD939F}.Release|x86.ActiveCfg = Release|Any CPU
+		{10872569-66E0-48A9-9CCD-51262EAD939F}.Release|x86.Build.0 = Release|Any CPU
 		{E269CB8F-4500-4359-BC93-47B827E72BA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E269CB8F-4500-4359-BC93-47B827E72BA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E269CB8F-4500-4359-BC93-47B827E72BA1}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{E269CB8F-4500-4359-BC93-47B827E72BA1}.Debug|x86.Build.0 = Debug|Any CPU
 		{E269CB8F-4500-4359-BC93-47B827E72BA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E269CB8F-4500-4359-BC93-47B827E72BA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E269CB8F-4500-4359-BC93-47B827E72BA1}.Release|x86.ActiveCfg = Release|Any CPU
+		{E269CB8F-4500-4359-BC93-47B827E72BA1}.Release|x86.Build.0 = Release|Any CPU
+		{D8D3758C-638B-4D98-9F86-7CD6661DC88C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{D8D3758C-638B-4D98-9F86-7CD6661DC88C}.Debug|x86.ActiveCfg = Debug|x86
+		{D8D3758C-638B-4D98-9F86-7CD6661DC88C}.Debug|x86.Build.0 = Debug|x86
+		{D8D3758C-638B-4D98-9F86-7CD6661DC88C}.Release|Any CPU.ActiveCfg = Release|x86
+		{D8D3758C-638B-4D98-9F86-7CD6661DC88C}.Release|x86.ActiveCfg = Release|x86
+		{D8D3758C-638B-4D98-9F86-7CD6661DC88C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

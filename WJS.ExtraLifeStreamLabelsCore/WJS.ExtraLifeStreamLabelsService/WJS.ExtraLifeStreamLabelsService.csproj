@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>dotnet-WJS.ExtraLifeStreamLabelsService-441DCAA1-A9C8-4FEC-9F19-F0B0A3FD728B</UserSecretsId>
     <RootNamespace>WJS.ExtraLifeStreamLabelsService</RootNamespace>
+    <StartupObject>WJS.ExtraLifeStreamLabelsService.Program</StartupObject>
+    <Version>2.0.0</Version>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>WJSolutions.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
