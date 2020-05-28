@@ -4,6 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>WJS.ParticipantData</AssemblyName>
     <RootNamespace>WJS.ParticipantData</RootNamespace>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>WJSolutions.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
