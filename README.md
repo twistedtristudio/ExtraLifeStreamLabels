@@ -15,7 +15,10 @@ After the install is complete, add your Participant Id, Team Id, and desired loc
   }
 ```
 
+Check out the project website at https://wirejunky-solutions.github.io/ExtraLifeStreamLabels/
+
 Like the work I have done?  Consider making a small donation to my Extra Life campaign at www.wirejunky.net
+
 
 ![Release (Master)](https://github.com/WireJunky-Solutions/ExtraLifeStreamLabels/workflows/Release%20(Master)/badge.svg?branch=master)
 
